@@ -13,14 +13,14 @@ const orderSchema = mongoose.Schema(
         qty: { type: Number, required: true },
         image: { type: String, required: true },
         price: { type: Number, required: true },
-        name: {
+        product: {
           type: mongoose.Schema.Types.ObjectId,
           required: true,
           ref: "Product",
         },
       },
     ],
-    ShippingAddress: {
+    shippingAddress: {
       address: { type: String, required: true },
       city: { type: String, required: true },
       postalCode: { type: String, required: true },
@@ -56,7 +56,7 @@ const orderSchema = mongoose.Schema(
       required: true,
       default: false,
     },
-    paidAT: {
+    paidAt: {
       type: Date,
     },
     isDelivered: {

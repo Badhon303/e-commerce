@@ -23,8 +23,7 @@ const CartScreen = ({ match, location, history }) => {
   }
 
   const checkoutHandler = () => {
-    console.log("checkout")
-    // history.push("/login?redirect=shipping")
+    history.push("/login?redirect=shipping")
   }
 
   return (
@@ -97,7 +96,7 @@ const CartScreen = ({ match, location, history }) => {
             <ListGroup.Item>
               <Button
                 type='button'
-                classname='btn-block'
+                className='btn-block'
                 style={{ width: "100%" }}
                 disabled={cartItems.length === 0}
                 onClick={checkoutHandler}
