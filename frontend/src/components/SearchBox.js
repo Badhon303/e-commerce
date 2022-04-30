@@ -1,30 +1,41 @@
-import React, { useState } from 'react'
-import { Form, Button } from 'react-bootstrap'
+import React, { useState } from "react"
+import { Form, Button, InputGroup, FormControl } from "react-bootstrap"
 
 const SearchBox = ({ history }) => {
-  const [keyword, setKeyword] = useState('')
-
+  const [keyword, setKeyword] = useState("")
   const submitHandler = (e) => {
     e.preventDefault()
     if (keyword.trim()) {
       history.push(`/search/${keyword}`)
     } else {
-      history.push('/')
+      history.push("/")
     }
   }
-
   return (
     <Form onSubmit={submitHandler} inline>
-      <Form.Control
+      {/* <Form.Control
         type='text'
         name='q'
         onChange={(e) => setKeyword(e.target.value)}
-        placeholder='Search Products...'
+        placeholder='Search products...'
         className='mr-sm-2 ml-sm-5'
       ></Form.Control>
       <Button type='submit' variant='outline-success' className='p-2'>
         Search
-      </Button>
+      </Button> */}
+      <InputGroup>
+        <FormControl
+          type='text'
+          name='q'
+          onChange={(e) => setKeyword(e.target.value)}
+          placeholder='Search products..'
+          aria-label='Search'
+          // aria-describedby="basic-addon2"
+        />
+        <Button type='submit' variant='outline-success'>
+          Search
+        </Button>
+      </InputGroup>
     </Form>
   )
 }
