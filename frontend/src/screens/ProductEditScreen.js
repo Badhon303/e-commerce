@@ -9,7 +9,7 @@ import FromContainer from "../components/FormContainer"
 import { listProductDetails, updateProduct } from "../actions/productActions"
 import { PRODUCT_UPDATE_RESET } from "../constants/productConstants"
 
-const baseUrl = "http://13.115.95.234:5000 "
+const baseUrl = "http://localhost:5000 "
 
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id
