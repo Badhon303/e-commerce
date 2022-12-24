@@ -2,6 +2,7 @@ import path from "path"
 import express from "express"
 import morgan from "morgan" //HTTP request logger middleware
 import dotenv from "dotenv"
+import cors from "cors"
 import mongoDB from "./config/db.js"
 import productRoutes from "./routes/productRoutes.js"
 import userRoutes from "./routes/userRoutes.js"
@@ -12,6 +13,13 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js"
 dotenv.config()
 mongoDB()
 const app = express()
+
+// CORS is enabled for all origins
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "http://13.115.95.234:3000"],
+  })
+)
 
 if (process.env.NODE_ENV === "dev") {
   app.use(morgan("dev")) // combined, common, dev, short, tiny
