@@ -27,7 +27,7 @@ import {
 } from "../constants/userConstants"
 import { ORDER_LIST_MY_RESET } from "../constants/orderConstants"
 
-const baseUrl = "http://localhost:5000"
+const baseUrl = "http://13.115.95.234:5000 "
 
 export const login = (email, password) => async (dispatch) => {
   try {
