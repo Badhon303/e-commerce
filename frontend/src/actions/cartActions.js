@@ -6,7 +6,7 @@ import {
   CART_SAVE_PAYMENT_METHOD,
 } from "../constants/cartConstants"
 
-const baseUrl = "http://localhost:5000 "
+const baseUrl = "http://13.115.95.234:5000 "
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
   const { data } = await axios.get(`${baseUrl}/api/products/${id}`)
