@@ -16,7 +16,7 @@ import {
   ORDER_DELIVER_RESET,
 } from "../constants/orderConstants"
 
-const baseUrl = "http://13.115.95.234:5000"
+const baseUrl = process.env.REACT_APP_baseUrl
 
 const OrderScreen = ({ match, history }) => {
   const dispatch = useDispatch()

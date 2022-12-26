@@ -23,7 +23,7 @@ import {
 } from "../constants/productConstants"
 import axios from "axios"
 
-const baseUrl = "http://13.115.95.234:5000"
+const baseUrl = process.env.REACT_APP_baseUrl
 
 export const listProducts =
   (keyword = "", pageNumber = "") =>

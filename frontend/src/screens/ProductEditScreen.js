@@ -9,7 +9,7 @@ import FromContainer from "../components/FormContainer"
 import { listProductDetails, updateProduct } from "../actions/productActions"
 import { PRODUCT_UPDATE_RESET } from "../constants/productConstants"
 
-const baseUrl = "http://13.115.95.234:5000"
+const baseUrl = process.env.REACT_APP_baseUrl
 
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id
@@ -55,7 +55,6 @@ const ProductEditScreen = ({ match, history }) => {
     const file = e.target.files[0]
     const formData = new FormData()
     formData.append("image", file)
-    console.log(formData)
     setUploading(true)
     try {
       const config = {
